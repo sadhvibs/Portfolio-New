@@ -198,50 +198,76 @@ section {
 }
 
 /* Skills */
-.skills-grid {
+.skills-modern {
+    padding: 80px 0;
+    background: var(--surface);
+}
+
+.skills-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
 
-.skill-category {
+.skill-card {
     background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border);
+    border: 1px solid #e5e7eb;
+    padding: 25px;
+    border-radius: 14px;
+    transition: all .3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.skill-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
+}
+
+.skill-card h3 {
     font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
 }
 
-.skill-tags {
+.skill-card h3::before {
+    content: "";
+    width: 35px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+
+.skill-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.skill-tag {
-    background: var(--surface);
-    padding: 0.4rem 1.2rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.skill-list span {
+    background: #f4f3ff;
     color: var(--text-primary);
-    border: 1px solid var(--border);
-    transition: transform .3s ease-in-out;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: .2s ease;
+    border: 1px solid #e0d9ff;
 }
 
-.skill-tag:hover {
-    transform: scale(1.1);
+.skill-list span:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
-.skill-category:hover {
-    box-shadow: 1px 3px 5px var(--accent-color);
-}
 
 /* Projects */
 .projects-grid {
@@ -431,8 +457,8 @@ section {
 .contact-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
     flex-wrap: wrap;
 }
 
@@ -480,5 +506,9 @@ section {
     .contact-links {
         flex-direction: column;
         align-items: center;
+    }
+
+    .nav-container {
+        display: none;
     }
 }
